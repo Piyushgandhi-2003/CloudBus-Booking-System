@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudBus | Payment</title>
+
+    <link rel="stylesheet" href="../css/payment.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-bus"></i>
+            <span>CloudBus</span>
+        </div>
+
+    </header>
+
+    <!-- Main Container -->
+
+    <main class="container">
+
+        <!-- Left Side -->
+
+        <section class="left-section">
+
+            <!-- Passenger Card -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-user"></i>
+                    Passenger Details
+                </h2>
+
+                <div class="info">
+
+                    <div class="row">
+                        <span>Name</span>
+                        <strong id="passengerName">-</strong>
+                    </div>
+
+                    <div class="row">
+                        <span>Seats</span>
+                        <strong id="seatNumbers">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bus Card -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-bus-simple"></i>
+                    Bus Details
+                </h2>
+
+                <div class="info">
+
+                    <div class="row">
+                        <span>Bus Name</span>
+                        <strong>CloudBus Express</strong>
+                    </div>
+
+                    <div class="row">
+                        <span>Bus Number</span>
+                        <strong>CB-101</strong>
+                    </div>
+
+                    <div class="row">
+                        <span>Bus Type</span>
+                        <strong>AC Sleeper</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Right Side -->
+
+        <section class="right-section">
+
+            <!-- Fare -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-receipt"></i>
+                    Booking Summary
+                </h2>
+
+                <div class="summary">
+
+                    <div class="row">
+                        <span>Selected Seats</span>
+                        <strong id="summarySeats">-</strong>
+                    </div>
+
+                    <div class="row total">
+
+                        <span>Total Amount</span>
+
+                        <strong>
+                            ₹<span id="totalFare">0</span>
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Payment Methods -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-wallet"></i>
+                    Payment Method
+                </h2>
+
+                <div class="payment-options">
+
+                    <label class="payment-card">
+
+                        <input type="radio"
+                            name="payment"
+                            value="UPI"
+                            checked>
+
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                        <span>UPI</span>
+
+                    </label>
+
+                    <label class="payment-card">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Credit Card">
+
+                        <i class="fa-regular fa-credit-card"></i>
+
+                        <span>Credit Card</span>
+
+                    </label>
+
+                    <label class="payment-card">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Debit Card">
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                        <span>Debit Card</span>
+
+                    </label>
+
+                    <label class="payment-card">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Net Banking">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        <span>Net Banking</span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- Pay Button -->
+
+            <button id="payBtn" class="pay-btn">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Pay Now
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Loading Overlay -->
+
+    <div id="loadingOverlay" class="overlay hidden">
+
+        <div class="loader-card">
+
+            <div class="loader"></div>
+
+            <h2>Processing Payment...</h2>
+
+            <p>Please do not refresh the page.</p>
+
+        </div>
+
+    </div>
+
+    <!-- Success Overlay -->
+
+    <div id="successOverlay" class="overlay hidden">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <h2>Payment Successful</h2>
+
+            <div class="success-info">
+
+                <div>
+                    Booking ID :
+                    <strong id="bookingId"></strong>
+                </div>
+
+                <div>
+                    Ticket Number :
+                    <strong id="ticketNumber"></strong>
+                </div>
+
+                <div>
+                    Payment ID :
+                    <strong id="paymentId"></strong>
+                </div>
+
+                <div>
+                    Booking Date :
+                    <strong id="bookingDate"></strong>
+                </div>
+
+            </div>
+
+            <p>
+
+                Redirecting to your ticket...
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="../js/payment.js"></script>
+
+</body>
+
+</html>

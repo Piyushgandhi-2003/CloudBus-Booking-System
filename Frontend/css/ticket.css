@@ -1,0 +1,726 @@
+/* ===========================
+   CloudBus Ticket Confirmation
+   ticket.css
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --success:#16a34a;
+    --danger:#ef4444;
+
+    --background:#eef4ff;
+    --card:#ffffff;
+
+    --text:#1f2937;
+    --gray:#6b7280;
+
+    --border:#dbeafe;
+
+    --shadow:0 15px 35px rgba(37,99,235,.12);
+
+    --radius:18px;
+
+}
+
+body{
+
+    background:linear-gradient(135deg,#eef4ff,#f8fbff);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+
+    background:#0f172a;
+
+    color:white;
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+.logo i{
+
+    color:#60a5fa;
+
+}
+
+/* ===========================
+   Success Banner
+=========================== */
+
+.success-banner{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    animation:fadeDown .7s ease;
+
+}
+
+.success-icon{
+
+    font-size:70px;
+
+    color:var(--success);
+
+    margin-bottom:15px;
+
+    animation:pop .6s ease;
+
+}
+
+.success-banner h1{
+
+    color:var(--success);
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+.success-banner p{
+
+    color:var(--gray);
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   Container
+=========================== */
+
+.container{
+
+    max-width:1250px;
+
+    margin:30px auto 60px;
+
+    padding:0 20px;
+
+}
+
+/* ===========================
+   Ticket
+=========================== */
+
+.ticket{
+
+    display:grid;
+
+    grid-template-columns:3fr 1fr;
+
+    background:var(--card);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp .7s ease;
+
+}
+
+/* ===========================
+   Left
+=========================== */
+
+.ticket-left{
+
+    padding:35px;
+
+}
+
+.ticket-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+.ticket-header h2{
+
+    color:var(--primary-dark);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.status{
+
+    background:var(--success);
+
+    color:white;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+.section{
+
+    margin-bottom:30px;
+
+    padding-bottom:25px;
+
+    border-bottom:1px dashed var(--border);
+
+}
+
+.section:last-child{
+
+    border:none;
+
+}
+
+.section h3{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   Grid
+=========================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.info-grid div{
+
+    background:#f8fbff;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.info-grid div:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 20px rgba(37,99,235,.08);
+
+}
+
+.info-grid span{
+
+    display:block;
+
+    color:var(--gray);
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+.info-grid strong{
+
+    font-size:16px;
+
+}
+
+.paid{
+
+    color:var(--success);
+
+}
+
+/* ===========================
+   Amount
+=========================== */
+
+.amount-section{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#eef5ff;
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.amount-section span{
+
+    color:var(--gray);
+
+}
+
+.amount-section h2{
+
+    color:var(--primary);
+
+    font-size:34px;
+
+}
+
+/* ===========================
+   Right
+=========================== */
+
+.ticket-right{
+
+    background:#f8fbff;
+
+    border-left:2px dashed var(--border);
+
+    padding:35px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+}
+
+.ticket-right h3{
+
+    color:var(--primary-dark);
+
+    margin-bottom:25px;
+
+}
+
+#qrcode{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+.payment-box{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+.payment-box span{
+
+    display:block;
+
+    color:var(--gray);
+
+    margin-bottom:8px;
+
+}
+
+.payment-box strong{
+
+    color:var(--primary-dark);
+
+    word-break:break-word;
+
+}
+
+.note{
+
+    text-align:center;
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-top:35px;
+
+}
+
+.actions button{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:white;
+
+    border:none;
+
+    padding:16px 30px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.2);
+
+}
+
+.actions button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 30px rgba(37,99,235,.3);
+
+}
+
+.actions button i{
+
+    margin-right:10px;
+
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pop{
+
+    0%{
+
+        transform:scale(.4);
+
+        opacity:0;
+
+    }
+
+    70%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.ticket{
+
+grid-template-columns:1fr;
+
+}
+
+.ticket-right{
+
+border-left:none;
+
+border-top:2px dashed var(--border);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+padding:0 20px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+}
+
+.ticket-left{
+
+padding:25px;
+
+}
+
+.ticket-right{
+
+padding:30px 20px;
+
+}
+
+.ticket-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.amount-section{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+.actions{
+
+flex-direction:column;
+
+}
+
+.actions button{
+
+width:100%;
+
+}
+
+.success-banner h1{
+
+font-size:30px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.container{
+
+padding:0 12px;
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.success-banner{
+
+padding:30px 15px;
+
+}
+
+.success-icon{
+
+font-size:55px;
+
+}
+
+.success-banner h1{
+
+font-size:26px;
+
+}
+
+.ticket-left{
+
+padding:20px;
+
+}
+
+}
+
+/* ===========================
+   Print
+=========================== */
+
+@media print{
+
+body{
+
+background:white;
+
+}
+
+.navbar,
+.success-banner,
+.actions{
+
+display:none;
+
+}
+
+.container{
+
+max-width:100%;
+
+margin:0;
+
+padding:0;
+
+}
+
+.ticket{
+
+box-shadow:none;
+
+border:1px solid #ccc;
+
+}
+
+.ticket-right{
+
+border-left:1px dashed #ccc;
+
+}
+
+}

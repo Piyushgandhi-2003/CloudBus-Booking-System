@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudBus | Seat Selection</title>
+
+    <link rel="stylesheet" href="../css/seat-selection.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        🚌 CloudBus
+    </div>
+
+</header>
+
+<main class="container">
+
+    <h1>Select Your Seats</h1>
+
+    <div class="legend">
+
+        <div>
+            <span class="seat available"></span>
+            Available
+        </div>
+
+        <div>
+            <span class="seat booked"></span>
+            Booked
+        </div>
+
+        <div>
+            <span class="seat selected"></span>
+            Selected
+        </div>
+
+    </div>
+
+    <div id="busLayout" class="bus-layout">
+
+    </div>
+
+    <div class="summary">
+
+        <h3>Selected Seats</h3>
+
+        <p id="selectedSeats">
+            None
+        </p>
+
+        <h2>
+            Total :
+            ₹<span id="totalPrice">0</span>
+        </h2>
+
+        <button id="continueBtn">
+            Continue
+        </button>
+
+    </div>
+
+</main>
+
+<script src="../js/seat-selection.js"></script>
+</body>
+</html>
